@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './app.css';
-import ReactImage from './react.png';
+//import ReactImage from './react.png';
+import hardCodedResponse from './hardCodedResponse.js';
 
 export default class App extends Component {
   state = { username: null, standingsRaw: null };
@@ -13,6 +14,7 @@ export default class App extends Component {
     fetch('https://statsapi.web.nhl.com/api/v1/standings')
       .then(res => res.json())
       .then(standingsRaw => this.setState({ standingsRaw }));
+    console.log(hardCodedResponse);
   }
 
   render() {
